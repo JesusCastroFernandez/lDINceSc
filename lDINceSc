@@ -1,0 +1,35 @@
+import numpy as np
+
+# Definir la matriz cuántica a descomponer
+matrix = np.array([[1, 0], [0, 1]])
+
+# Obtener los autovalores y autovectores de la matriz
+eigenvalues, eigenvectors = np.linalg.eig(matrix)
+
+# Inicializar el circuito cuántico
+qc = QuantumCircuit(len(matrix), len(matrix))
+
+# Aplicar las puertas unitarias correspondientes a los autovectores
+for i in range(len(matrix)):
+    qc.initialize(eigenvectors[:, i], i)
+
+# Realizar la descomposición cuántica en el circuito
+# ...
+
+# Medir los qubits para obtener los bits clásicos resultantes
+qc.measure_all()
+
+# Ejecutar el circuito en un simulador cuántico o en un dispositivo real
+# ...
+
+# Obtener los resultados de las mediciones
+# ...
+
+# Realizar la descomposición clásica de los resultados para obtener los operadores de puertas cuánticas
+# ...
+
+# Implementar las puertas cuánticas obtenidas en el circuito original
+# ...
+
+# Ejecutar el circuito modificado en un simulador o dispositivo cuántico para verificar la descomposición
+# ...
